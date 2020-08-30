@@ -1,0 +1,27 @@
+pragma solidity 0.4.18 <= 0.6.12;
+contract RestaurantBills{
+    string consumerName;
+    string MenuOrdered; 
+    int    orderNo;
+    int    money;
+    string feedback;
+    string Date;
+    function ElectricityBills(string newConsumerName, string newMenuOrdered, int newOrderNo, int newMoney, string newfeedback, 
+    string newDate) public {
+        
+        consumerName = newConsumerName;
+        MenuOrdered = newMenuOrdered;
+        orderNo = newOrderNo;
+        money = newMoney;
+        feedback = newfeedback;
+        Date = newDate;
+    }
+    function getElectricityBill() public view returns(string,string,int,int,string, string) {
+        return(consumerName,MenuOrdered,orderNo,money,feedback,Date);
+    }
+    function setMonthElectricityBill(string newConsumerName, int newOrderNo, int newMoney) public{
+        consumerName = newConsumerName;
+        orderNo = newOrderNo;
+        money = newMoney;
+    }
+}
